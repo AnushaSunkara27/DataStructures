@@ -156,5 +156,7 @@ public class DoublyLinkedList {
         doublyLinkedList.printList();
         doublyLinkedList.append(2);
         doublyLinkedList.printList();
+        doublyLinkedList.prepend(0);
+        doublyLinkedList.removeFirst();
     }
 }
