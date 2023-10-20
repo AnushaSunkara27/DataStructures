@@ -136,14 +136,12 @@ public class DoublyLinkedList {
         if(index == 0) {
             return removeFirst();
         }
-        if(index == length) {
+        if(index == length-1) {
             return removeLast();
         }
         Node temp = get(index);
-        Node before = temp.prev;
-        Node after = temp.next;
-        before.next = after;
-        after.prev = before;
+        temp.prev.next = temp.next;
+        temp.next.prev = temp.prev;
         temp.prev = null;
         temp.next = null;
         length--;
