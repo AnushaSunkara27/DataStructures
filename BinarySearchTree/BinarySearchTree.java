@@ -1,5 +1,9 @@
 package BinarySearchTree;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BinarySearchTree {
     Node root;
 
@@ -55,6 +59,81 @@ public class BinarySearchTree {
         return false;
     }
 
+    public ArrayList<Integer> BFSMethod() {
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        Queue<Node> queue = new LinkedList<>();
+        Node currNode = root;
+        queue.add(currNode);
+
+        while(queue.size() > 0) {
+            currNode = queue.remove();
+            arrayList.add(currNode.value);
+
+            if(currNode.left != null) {
+                queue.add(currNode.left);
+            }
+            if(currNode.right != null) {
+                queue.add(currNode.right);
+            }
+        }
+        return arrayList;
+    }
+
+    public ArrayList<Integer> DFSPreOrder() {
+        ArrayList<Integer> results = new ArrayList<>();
+
+        class Traverse {
+            Traverse(Node currNode) {
+                results.add(currNode.value);
+                if(currNode.left != null) {
+                    new Traverse(currNode.left);
+                }
+                if(currNode.right != null) {
+                    new Traverse(currNode.right);
+                }
+            }
+        }
+
+        new Traverse(root);
+        return results;
+    }
+
+    public ArrayList<Integer> DFSPostOrder() {
+        ArrayList<Integer> result = new ArrayList<>();
+
+        class Traverse {
+            Traverse(Node currNode) {
+                if(currNode.left != null) {
+                    new Traverse(currNode.left);
+                }
+                if(currNode.right != null) {
+                    new Traverse(currNode.right);
+                }
+                result.add(currNode.value);
+            }
+        }
+        new Traverse(root);
+        return result;
+    }
+
+    public ArrayList<Integer> DFSInOrder() {
+        ArrayList<Integer> arrayList = new ArrayList<>();
+
+        class Traverse {
+            Traverse(Node currNode) {
+                if(currNode.left != null) {
+                    new Traverse(currNode.left);
+                }
+                arrayList.add(currNode.value);
+                if(currNode.right != null) {
+                    new Traverse(currNode.right);
+                }
+            }
+        }
+        new Traverse(root);
+        return arrayList;
+    }
+
     public static void main(String[] args) {
         BinarySearchTree bst = new BinarySearchTree();
 
@@ -80,6 +159,7 @@ public class BinarySearchTree {
         System.out.println("\nBST Contains 17:");
         System.out.println(myBST.contains(17));
 
+        System.out.println(myBST.BFSMethod());
     }
 
 }
