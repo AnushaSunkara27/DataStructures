@@ -1,4 +1,4 @@
-package StacksQueues;
+package StacksQueues.Stacks;
 
 public class Stack {
     private int height;
