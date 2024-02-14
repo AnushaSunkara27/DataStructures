@@ -1,0 +1,18 @@
+# Tree Data structure
+
+1. A tree represents hierarichal data. It has following
+- root
+- child
+- parent
+- sibling - Nodes that have same parents are called siblings
+- leaf - Node which doesn't have any child
+- ancestor - It is any predecessor node on a path from root to that node.
+- Descendant - immediate successor of given node 
+
+
+# Binary Search tree operations
+1. Search
+2. insert
+3. Preorder traversal
+4. Inorder traversal
+5. Postorder traversal
