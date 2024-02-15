@@ -1,0 +1,30 @@
+- A graph is an abstract data type (ADT) which consists of a set of objects that are connected to each other via links. The interconnected objects are represented by points termed as vertices, and the links that connect the vertices are called edges.
+
+- Graph Traversals
+1. Depth First Search
+2. Breadth First Search
+
+-Depth First Search is a traversal algorithm that visits all the vertices of a graph in the decreasing order of its depth.
+-The DFS traversal uses the stack data structure to keep track of the unvisited nodes.
+
+-Breadth First Search is a traversal algorithm that visits all the vertices of a graph present at one level of the depth before moving to the next level of depth.
+-The BFS traversal uses the queue data structure to keep track of the unvisited nodes.
+
+
+- Representation of Graph
+1. Ajacency Matrix
+2. Adjacency List
+
+- Spanning tree
+A spanning tree is a subset of an undirected graph that contains all the vertices of the graph connected with the minimum number of edges in the graph.
+* A spanning tree does not have any cycle.
+* Any vertex can be reached from any other vertex.
+
+* A Minimum Spanning Tree (MST) is a subset of edges of a connected weighted undirected graph that connects all the vertices together with the minimum possible total edge weight. To derive an MST, Prim's algorithm or Kruskal's algorithm can be used. 
+
+- The shortest path in a graph is defined as the minimum cost route from one vertex to another. This is most commonly seen in weighted directed graphs but are also applicable to undirected graphs.
+
+* Dijkstra's Shortest Path Algorithm
+* Bellman Ford's Shortest Path Algorithm
+
+
